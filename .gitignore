@@ -1,5 +1,5 @@
 # dep 폴더
-vender/
+vendor/
 
 # mac hidden files
 .DS_Store
