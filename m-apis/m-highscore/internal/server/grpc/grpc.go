@@ -2,11 +2,12 @@ package grpc
 
 import (
 	"context"
-	pbhighscore "github.com/gRpc/m-apis/m-highscore/v1"
+	"net"
+
+	pbhighscore "github.com/gRPC/m-apis/m-highscore/v1"
 	"github.com/pkg/errors"
 	"github.com/rs/zerolog/log"
 	"google.golang.org/grpc"
-	"net"
 )
 
 type Grpc struct {
