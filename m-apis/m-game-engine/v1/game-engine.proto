@@ -5,11 +5,11 @@ package m.gameengine.v1;
 option go_package="./;gameengine";
 
 service GameEngine{
-    rpc GetSize(GerSizeRequest) returns (GetSizeResponse);
+    rpc GetSize(GetSizeRequest) returns (GetSizeResponse);
     rpc SetScore(SetScoreRequest) returns (SetScoreResponse);
 }
 
-message GerSizeRequest {
+message GetSizeRequest {
     
 }
 

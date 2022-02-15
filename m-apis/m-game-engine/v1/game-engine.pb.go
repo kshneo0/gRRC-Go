@@ -26,14 +26,14 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type GerSizeRequest struct {
+type GetSizeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *GerSizeRequest) Reset() {
-	*x = GerSizeRequest{}
+func (x *GetSizeRequest) Reset() {
+	*x = GetSizeRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_game_engine_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -41,13 +41,13 @@ func (x *GerSizeRequest) Reset() {
 	}
 }
 
-func (x *GerSizeRequest) String() string {
+func (x *GetSizeRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GerSizeRequest) ProtoMessage() {}
+func (*GetSizeRequest) ProtoMessage() {}
 
-func (x *GerSizeRequest) ProtoReflect() protoreflect.Message {
+func (x *GetSizeRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_game_engine_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -59,8 +59,8 @@ func (x *GerSizeRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GerSizeRequest.ProtoReflect.Descriptor instead.
-func (*GerSizeRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetSizeRequest.ProtoReflect.Descriptor instead.
+func (*GetSizeRequest) Descriptor() ([]byte, []int) {
 	return file_game_engine_proto_rawDescGZIP(), []int{0}
 }
 
@@ -210,7 +210,7 @@ var File_game_engine_proto protoreflect.FileDescriptor
 var file_game_engine_proto_rawDesc = []byte{
 	0x0a, 0x11, 0x67, 0x61, 0x6d, 0x65, 0x2d, 0x65, 0x6e, 0x67, 0x69, 0x6e, 0x65, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x12, 0x0f, 0x6d, 0x2e, 0x67, 0x61, 0x6d, 0x65, 0x65, 0x6e, 0x67, 0x69, 0x6e,
-	0x65, 0x2e, 0x76, 0x31, 0x22, 0x10, 0x0a, 0x0e, 0x47, 0x65, 0x72, 0x53, 0x69, 0x7a, 0x65, 0x52,
+	0x65, 0x2e, 0x76, 0x31, 0x22, 0x10, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x53, 0x69, 0x7a, 0x65, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x25, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x53, 0x69, 0x7a,
 	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x73, 0x69, 0x7a,
 	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x01, 0x52, 0x04, 0x73, 0x69, 0x7a, 0x65, 0x22, 0x27, 0x0a,
@@ -221,7 +221,7 @@ var file_game_engine_proto_rawDesc = []byte{
 	0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x03, 0x73, 0x65, 0x74, 0x32, 0xab, 0x01, 0x0a,
 	0x0a, 0x47, 0x61, 0x6d, 0x65, 0x45, 0x6e, 0x67, 0x69, 0x6e, 0x65, 0x12, 0x4c, 0x0a, 0x07, 0x47,
 	0x65, 0x74, 0x53, 0x69, 0x7a, 0x65, 0x12, 0x1f, 0x2e, 0x6d, 0x2e, 0x67, 0x61, 0x6d, 0x65, 0x65,
-	0x6e, 0x67, 0x69, 0x6e, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x72, 0x53, 0x69, 0x7a, 0x65,
+	0x6e, 0x67, 0x69, 0x6e, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x69, 0x7a, 0x65,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x20, 0x2e, 0x6d, 0x2e, 0x67, 0x61, 0x6d, 0x65,
 	0x65, 0x6e, 0x67, 0x69, 0x6e, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x69, 0x7a,
 	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x4f, 0x0a, 0x08, 0x53, 0x65, 0x74,
@@ -248,13 +248,13 @@ func file_game_engine_proto_rawDescGZIP() []byte {
 
 var file_game_engine_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_game_engine_proto_goTypes = []interface{}{
-	(*GerSizeRequest)(nil),   // 0: m.gameengine.v1.GerSizeRequest
+	(*GetSizeRequest)(nil),   // 0: m.gameengine.v1.GetSizeRequest
 	(*GetSizeResponse)(nil),  // 1: m.gameengine.v1.GetSizeResponse
 	(*SetScoreRequest)(nil),  // 2: m.gameengine.v1.SetScoreRequest
 	(*SetScoreResponse)(nil), // 3: m.gameengine.v1.SetScoreResponse
 }
 var file_game_engine_proto_depIdxs = []int32{
-	0, // 0: m.gameengine.v1.GameEngine.GetSize:input_type -> m.gameengine.v1.GerSizeRequest
+	0, // 0: m.gameengine.v1.GameEngine.GetSize:input_type -> m.gameengine.v1.GetSizeRequest
 	2, // 1: m.gameengine.v1.GameEngine.SetScore:input_type -> m.gameengine.v1.SetScoreRequest
 	1, // 2: m.gameengine.v1.GameEngine.GetSize:output_type -> m.gameengine.v1.GetSizeResponse
 	3, // 3: m.gameengine.v1.GameEngine.SetScore:output_type -> m.gameengine.v1.SetScoreResponse
@@ -272,7 +272,7 @@ func file_game_engine_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_game_engine_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GerSizeRequest); i {
+			switch v := v.(*GetSizeRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -352,7 +352,7 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type GameEngineClient interface {
-	GetSize(ctx context.Context, in *GerSizeRequest, opts ...grpc.CallOption) (*GetSizeResponse, error)
+	GetSize(ctx context.Context, in *GetSizeRequest, opts ...grpc.CallOption) (*GetSizeResponse, error)
 	SetScore(ctx context.Context, in *SetScoreRequest, opts ...grpc.CallOption) (*SetScoreResponse, error)
 }
 
@@ -364,7 +364,7 @@ func NewGameEngineClient(cc grpc.ClientConnInterface) GameEngineClient {
 	return &gameEngineClient{cc}
 }
 
-func (c *gameEngineClient) GetSize(ctx context.Context, in *GerSizeRequest, opts ...grpc.CallOption) (*GetSizeResponse, error) {
+func (c *gameEngineClient) GetSize(ctx context.Context, in *GetSizeRequest, opts ...grpc.CallOption) (*GetSizeResponse, error) {
 	out := new(GetSizeResponse)
 	err := c.cc.Invoke(ctx, "/m.gameengine.v1.GameEngine/GetSize", in, out, opts...)
 	if err != nil {
@@ -384,7 +384,7 @@ func (c *gameEngineClient) SetScore(ctx context.Context, in *SetScoreRequest, op
 
 // GameEngineServer is the server API for GameEngine service.
 type GameEngineServer interface {
-	GetSize(context.Context, *GerSizeRequest) (*GetSizeResponse, error)
+	GetSize(context.Context, *GetSizeRequest) (*GetSizeResponse, error)
 	SetScore(context.Context, *SetScoreRequest) (*SetScoreResponse, error)
 }
 
@@ -392,7 +392,7 @@ type GameEngineServer interface {
 type UnimplementedGameEngineServer struct {
 }
 
-func (*UnimplementedGameEngineServer) GetSize(context.Context, *GerSizeRequest) (*GetSizeResponse, error) {
+func (*UnimplementedGameEngineServer) GetSize(context.Context, *GetSizeRequest) (*GetSizeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSize not implemented")
 }
 func (*UnimplementedGameEngineServer) SetScore(context.Context, *SetScoreRequest) (*SetScoreResponse, error) {
@@ -404,7 +404,7 @@ func RegisterGameEngineServer(s *grpc.Server, srv GameEngineServer) {
 }
 
 func _GameEngine_GetSize_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GerSizeRequest)
+	in := new(GetSizeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -416,7 +416,7 @@ func _GameEngine_GetSize_Handler(srv interface{}, ctx context.Context, dec func(
 		FullMethod: "/m.gameengine.v1.GameEngine/GetSize",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GameEngineServer).GetSize(ctx, req.(*GerSizeRequest))
+		return srv.(GameEngineServer).GetSize(ctx, req.(*GetSizeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
