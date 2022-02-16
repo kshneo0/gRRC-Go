@@ -2,9 +2,11 @@ package grpc
 
 import (
 	"context"
+	"net"
 
 	"github.com/gRPC/m-apis/m-game-engine/internal/server/logic"
 	pbgameengine "github.com/gRPC/m-apis/m-game-engine/v1"
+	"github.com/pkg/errors"
 	"github.com/rs/zerolog/log"
 	"google.golang.org/grpc"
 )
@@ -33,4 +35,25 @@ func (g *Grpc) SetScore(ctx context.Context, input *pbgameengine.SetScoreRequest
 	return &pbgameengine.SetScoreResponse{
 		Set: set,
 	}, nil
+}
+
+func (g *Grpc) ListenAndServe() error {
+	lis, err := net.Listen("tcp", g.address)
+	if err != nil {
+		return errors.Wrap(err, "failed to open tcp port")
+	}
+
+	serverOpts := []grpc.ServerOption{}
+
+	g.srv = grpc.NewServer(serverOpts...)
+
+	pbgameengine.RegisterGameEngineServer(g.srv, g)
+
+	log.Info().Str("address", g.address).Msg("starting gRPC server for m-game-engine microservice")
+
+	err = g.srv.Serve(lis)
+	if err != nil {
+		return errors.Wrap(err, "failed to start gRPC server for m-game-engine microservice")
+	}
+	return nil
 }
