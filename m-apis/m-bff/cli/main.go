@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"github.com/GRPC/m-bff/bff"
+	"github.com/gRPC/m-apis/m-bff/bff"
 	"github.com/gin-gonic/gin"
 	"github.com/rs/zerolog/log"
 )
